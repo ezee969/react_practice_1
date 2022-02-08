@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/simple_to_do_react/static/css/main.638c1e08.css",
+    "main.js": "/simple_to_do_react/static/js/main.87aaa580.js",
+    "static/media/bin.png": "/simple_to_do_react/static/media/bin.c4f0af28c10a19fbeee1.png",
+    "index.html": "/simple_to_do_react/index.html",
+    "main.638c1e08.css.map": "/simple_to_do_react/static/css/main.638c1e08.css.map",
+    "main.87aaa580.js.map": "/simple_to_do_react/static/js/main.87aaa580.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.638c1e08.css",
+    "static/js/main.87aaa580.js"
+  ]
+}
