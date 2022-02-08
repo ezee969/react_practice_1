@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Overview from "./components/pages/Overview";
+import uniqid from "uniqid";
 
-function App() {
+export default function App() {
+  const [task,setTask] = useState({text: "", id:uniqid()})
+  const [tasks,setTasks] = useState([])
+  
+  const handleChange = () => {
+    setTask({text: document.querySelector("input").value, id:uniqid()})
+  }
+
+  const handleSubmit = () => {
+    if (task.text !== ""){
+    setTasks(currentTasks => currentTasks.concat(task))
+    setTask({text:"", id:uniqid()})
+    }
+  }
+  
+  // const handleDelete = () => {
+    // let taskIndex = tasks.findIndex((task) => task.id === )
+    // setTasks(currentTasks => currentTasks.splice(taskIndex, 1))
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-cont">
+      <div className="to-do-cont"> 
+        <div className="input-cont">
+          <form>
+            <input value={task.text} onChange={handleChange} maxLength="25" type="text" id="input" name="input" placeholder="Write your input"/>
+          </form>
+          <button onClick={handleSubmit} >Submit</button> 
+        </div>
+        <div className="tasksCont">
+          <ul>
+            <Overview tasks = {tasks}/>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
