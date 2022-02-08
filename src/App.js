@@ -17,10 +17,11 @@ export default function App() {
     }
   }
   
-  // const handleDelete = () => {
-    // let taskIndex = tasks.findIndex((task) => task.id === )
+  const handleDelete = (e) => {
+    let taskIndex = tasks.findIndex((task) => task.id === e.target.key)
     // setTasks(currentTasks => currentTasks.splice(taskIndex, 1))
-  // }
+    console.log(e.target.parentElement)
+  }
 
   return (
     <div className="main-cont">
@@ -33,7 +34,7 @@ export default function App() {
         </div>
         <div className="tasksCont">
           <ul>
-            <Overview tasks = {tasks}/>
+            <Overview tasks = {tasks} deleteFunction = {handleDelete}/>
           </ul>
         </div>
       </div>
