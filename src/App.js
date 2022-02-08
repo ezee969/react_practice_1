@@ -18,9 +18,8 @@ export default function App() {
   }
   
   const handleDelete = (e) => {
-    let taskIndex = tasks.findIndex((task) => task.id === e.target.key)
-    // setTasks(currentTasks => currentTasks.splice(taskIndex, 1))
-    console.log(e.target.parentElement)
+    const elementId = e.target.parentElement.id
+    setTasks(currentTasks => currentTasks.filter(task => task.id !== elementId))
   }
 
   return (

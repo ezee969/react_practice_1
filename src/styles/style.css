@@ -104,12 +104,12 @@ li:hover{
     color: #5c5b5b;
 }
 
-.delete-but{
+.task-but{
     height: 20px;  
     width: 20px;
     cursor: pointer;
 }
 
-.delete-but:active{
+.task-but:active{
     transform: translateY(0.5px);
 }
